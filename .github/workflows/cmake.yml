@@ -1,4 +1,4 @@
-name: Samurai's Hello World Tests
+name: Samurai's Process Monitor Tests
 
 on:
   push:
@@ -63,5 +63,23 @@ jobs:
       - name: Build solution
         run: cmake -S . --preset "${{ matrix.buildtype }}" -G Ninja && cmake --build . -j
 
-      - name: Run hello
-        run: ./hello
+      - name: Run task 1
+        run: ./users_processes
+
+      - name: Run task 2
+        run: ./from_sbin
+
+      - name: Run task 3
+        run: ./pid_of_last
+
+      - name: Run task 4
+        run: ./cpu_burst
+
+      - name: Run task 5
+        run: ./avg_run_child_or_parent
+
+      - name: Run task 6
+        run: ./the_fattest_one
+
+      - name: Run task 7
+        run: ./io
